@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
+import React from 'react';
+import { Htag } from '../components';
  
 
 const Home: NextPage = () => {
   return (
     <div >
-       Noto Sans
+       <Htag tag="h1">Привет</Htag>
     </div>
   );
 };
