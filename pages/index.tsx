@@ -1,9 +1,13 @@
 import type { NextPage } from 'next';
-import React from 'react';
-import { Htag, Button, Paragraph, Tag } from '../components';
+import React, { useState } from 'react';
+import { Htag, Button, Paragraph, Tag, Rating } from '../components';
+import { withLayout } from '../layout/Layout';
+
 
 
 const Home: NextPage = () => {
+  const [rating, setRating] = useState<number>(0);
+
   return (
     <>
       <Htag tag="h1">Привет</Htag>
@@ -16,8 +20,9 @@ const Home: NextPage = () => {
       <Tag color="red">Red</Tag>
       <Tag color="green">Green</Tag>
       <Tag color="primary">Primary</Tag>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </>
   );
 };
 
-export default Home;
+export default withLayout(Home);
